@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+@import "tailwindcss/preflight";
+@tailwind utilities;
+
+:root{
+  --ff-sans: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --ff-serif: "Cormorant Garamond", Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+@layer base {
+  html { font-family: var(--ff-sans), sans-serif; }
+  body { @apply leading-relaxed tracking-[0.01em] antialiased; }
+  h1,h2,h3,h4,h5,h6 {
+    font-family: var(--ff-serif), serif;
+    @apply leading-tight;
+  }
+  h1,h2,h3 { font-weight: 600; line-height: 1.25; letter-spacing: 0; }
+}
+
+@theme {
+  --spacing-header-padding-block: 16px;
+  --spacing-header-padding-inline: 16px;
+  --spacing-footer-padding-block: 16px;
+  --spacing-footer-padding-inline: 8px;
+  --color-accent-500: var(--color-gray-500);
+  --color-accent-200: var(--color-gray-200);
+  --color-reverse: var(--color-white);
+}
+
+header {
+  @apply py-header-padding-block px-header-padding-inline bg-accent-500 text-reverse;
+}
+
+footer {
+  @apply py-footer-padding-block px-footer-padding-inline bg-accent-500 text-reverse;
+}
+
+h1 {
+  @apply text-3xl;
+}
+
+h2 {
+  @apply text-xl;
+}
