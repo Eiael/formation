@@ -1,0 +1,9 @@
+<button class="border rounded  text-reverse font-semibold px-4 py-2"
+        [ngClass]="{
+        'bg-blue-500 hover:scale-105 active:scale-95': !disabled,
+        'bg-gray-500': disabled,
+        }"
+        (click)="btnClicked()"
+        [disabled]="disabled">
+  <ng-content></ng-content>
+</button>

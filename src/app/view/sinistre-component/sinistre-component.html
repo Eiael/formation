@@ -1,0 +1,29 @@
+<div class="h-full w-full flex flex-col gap-8 p-8">
+  <span class="text-xl font-semibold">Tarif : {{ tarif === -1 ? 'Non pris en charge' : tarif }}</span>
+  <div class="flex flex-col gap-4">
+    <span class="text-xl font-semibold">Le nain était-il consentant ?</span>
+    <app-choice-list-component [choices]="questionChoicesList[0]" [selectedChoice]="choices[0]" (choiceChanged)="onChoiceChanged(0, $event)"></app-choice-list-component>
+  </div>
+  <div class="flex flex-col gap-4">
+    <span class="text-xl font-semibold">Dans quel état est le nain ?</span>
+    <app-choice-list-component [choices]="questionChoicesList[1]" [selectedChoice]="choices[1]" (choiceChanged)="onChoiceChanged(1, $event)"></app-choice-list-component>
+  </div>
+  <div class="flex flex-col gap-4">
+    <span class="text-xl font-semibold">Le nain a-t-il manifesté l'intention de se venger ?</span>
+    <app-choice-list-component [choices]="questionChoicesList[2]" [selectedChoice]="choices[2]" (choiceChanged)="onChoiceChanged(2, $event)"></app-choice-list-component>
+  </div>
+  <div class="flex flex-col gap-4">
+    <span class="text-xl font-semibold">Le nain est-il armé ?</span>
+    <app-choice-list-component [choices]="questionChoicesList[3]" [selectedChoice]="choices[3]" (choiceChanged)="onChoiceChanged(3, $event)"></app-choice-list-component>
+  </div>
+  <div class="flex flex-col gap-4">
+    <span class="text-xl font-semibold">Le nain est-il accompagné d'autres nains ? Si oui, combien ?</span>
+    <app-choice-list-component [choices]="questionChoicesList[4]" [selectedChoice]="choices[4]" (choiceChanged)="onChoiceChanged(4, $event)"></app-choice-list-component>
+  </div>
+  <div class="flex flex-col gap-2 items-center">
+    @if (runForYourLife) {
+      <span class="text-sm">Nous ne pouvons malheureusement rien faire pour vous. Nous vous suggérons de courir pour votre vie.</span>
+    }
+    <app-button (btnClick)="submit()" [disabled]="runForYourLife">Valider</app-button>
+  </div>
+</div>

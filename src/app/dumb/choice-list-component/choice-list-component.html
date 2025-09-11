@@ -1,0 +1,12 @@
+<div class="flex flex-wrap gap-2">
+  @for (choice of choices; track choice.id) {
+    <div class="border rounded h-full p-2 active:scale-95"
+         (click)="choiceClick(choice.id)"
+         [ngClass]="{
+         'bg-green-200': choice.id === selectedChoice,
+         'hover:bg-gray-500 hover:text-reverse': choice.id !== selectedChoice,
+         }">
+      {{ choice.label }}
+    </div>
+  }
+</div>

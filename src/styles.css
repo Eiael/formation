@@ -1,8 +1,5 @@
 @import "tailwindcss";
 
-@import "tailwindcss/preflight";
-@tailwind utilities;
-
 :root{
   --ff-sans: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   --ff-serif: "Cormorant Garamond", Georgia, Cambria, "Times New Roman", Times, serif;
@@ -42,4 +39,8 @@ h1 {
 
 h2 {
   @apply text-xl;
+}
+
+a {
+  @apply text-accent-500 font-semibold underline;
 }
